@@ -88,8 +88,16 @@ function createGallery(images) {
 
 gallery.innerHTML = createGallery(images);
 
-const gallerySimpleLightbox = new SimpleLightbox('.gallery');
-
-gallerySimpleLightbox.on('show.simplelightbox', function () {
-  console.log('show.simplelightbox');
+const gallerySimpleLightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
 });
+
+// gallerySimpleLightbox.on('show.simplelightbox', elem => {
+//   console.log('sss');
+//   console.log(elem);
+//   console.log(elem.target);
+//   const img = elem.target.querySelector('img');
+//   console.log(img.alt);
+// });
