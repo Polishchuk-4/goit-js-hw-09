@@ -33,4 +33,5 @@ form.addEventListener('submit', event => {
   formData.message = '';
   localStorage.clear();
   form.reset();
+  // form.submit();
 });
