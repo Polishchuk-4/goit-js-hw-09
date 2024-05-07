@@ -20,15 +20,17 @@ form.addEventListener('input', event => {
     formData.message = event.target.value.trim();
   }
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
-  console.log(localStorage);
 });
 
 form.addEventListener('submit', event => {
+  event.preventDefault();
   if (email.value === '' || message.value === '') {
     alert('Fill please all fields');
     return;
   }
   console.log(formData);
+  formData.email = '';
+  formData.message = '';
   localStorage.clear();
   form.reset();
 });
